@@ -82,10 +82,10 @@ let lightColor = (element, number) => {
   //funcao para game over
   let gameOver = () => {
     alert(
-      "Pontuação: $(score)!\nVocê perdeu o jogo!\nClique em Ok para inciar um novo jogo."
+      `Pontuação: ${score}!\nVocê perdeu o jogo!\nClique em OK para iniciar um novo jogo`
     );
     order = [];
-    clickOrder = [];
+    clickedOrder = [];
 
     playGame();
   };
@@ -96,7 +96,7 @@ let lightColor = (element, number) => {
 
   nextLevel1();
 };
-//Eventos de clique para as cores
+//eventos de clique para as cores
 green.onclick = () => click(0);
 red.onclick = () => click(1);
 yellow.onclick = () => click(2);
