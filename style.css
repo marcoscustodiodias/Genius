@@ -6,6 +6,7 @@ body {
 .main-game {
   height: 100vh;
   width: 100vw;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -14,6 +15,7 @@ body {
   display: grid;
   grid-template-areas: "verde vermelho" "amarelo azul";
   border: 1px solid #ffffff;
+  grid-gap: 10px;
   background-color: #ffffff;
   border-radius: 100%;
   border-radius: 100%;
@@ -27,7 +29,7 @@ body {
   border-bottom-right-radius: 100%;
 }
 
-red {
+.red {
   grid-area: vermelho;
   background-color: red;
   border-bottom-right-radius: 100%;

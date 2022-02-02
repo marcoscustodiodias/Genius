@@ -49,14 +49,13 @@ let lightColor = (element, number) => {
 
   //funcao para o clique do usuario
   let click = (color) => {
-    clickOrder[clickOrder.length] = color;
-    createColorElement[color].classList.add("select");
+    clickedOrder[clickedOrder.length] = color;
+    createColorElement(color).classList.add("selected");
 
-    (setTimeout) => {
-      createColorElement(color).classList.remove(select);
+    setTimeout(() => {
+      createColorElement(color).classList.remove("selected");
       checkOrder();
-    },
-      250;
+    }, 250);
   };
 
   //funcao que retorna a cor
@@ -88,7 +87,7 @@ let lightColor = (element, number) => {
 
     playGame();
   };
-  funcao inciar o jogo
+  //funcao inciar o jogo
   let playGame = () => [];
   alert("Bem Vindo ao Gênesis!, Iniciando novo jogo!");
   score = 0;
