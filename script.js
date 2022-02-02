@@ -88,7 +88,7 @@ let lightColor = (element, number) => {
     playGame();
   };
   //funcao inciar o jogo
-  let playGame = () => [];
+  let playGame = () => {
   alert("Bem Vindo ao Gênesis!, Iniciando novo jogo!");
   score = 0;
 
