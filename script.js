@@ -14,8 +14,8 @@ const yellow = document.querySelector(".yellow");
 
 //cria ordem aleatoria de cores
 let shuffleOrder = () => {
-    let coloOrder = Math.floor(Math.randon[] * 4);
-    order[order.length] = coloOrder;
+    let colorOrder = Math.floor(Math.random() * 4);
+    order[order.length] = colorOrder;
     clickedOrder = [];
 
     for(let i in order) {
@@ -33,18 +33,17 @@ let shuffleOrder = () => {
          element.classList.remove('selected');
      });
 
-//checa se os botoes clicados são os memos da ordem do jogo     
-     let checkOrder = () => {
-         for (let i in clickedOrder) {
-             if (clickedOrder)[i] != order[i] {
-                gameOver();
-                brack;
-             }
-         }
-
-         if(clickedOrder.length == order.length){
-             alert('Pontuação: $(score)\nVocê acertou! Iniciando o proximo nível!');
-             nextLevel();
+////checa se os botoes clicados são os mesmos da ordem gerada no jogo     
+let checkOrder = () => {
+    for(let i in clickedOrder) {
+        if(clickedOrder[i] != order[i]) {
+            gameOver();
+            break;
+        }
+    }
+    if(clickedOrder.length == order.length) {
+        alert(`Pontuação: ${score}\nVocê acertou! Iniciando próximo nível!`);
+        nextLevel();
 
          }
         }
@@ -61,7 +60,7 @@ let shuffleOrder = () => {
             }, 250};
 
             //funcao que retorna a cor
-            let createColorElement = (color) {
+            let createColorElement = (color) => {
                 if(color == 0) {
                     return green;
                 } else if (color == 1) {
