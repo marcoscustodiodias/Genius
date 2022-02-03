@@ -32,63 +32,63 @@ let lightColor = (element, number) => {
   setTimeout(() => {
     element.classList.remove("selected");
   });
-
-  //checa se os botoes clicados são os mesmos da ordem gerada no jogo
-  let checkOrder = () => {
-    for (let i in clickedOrder) {
-      if (clickedOrder[i] != order[i]) {
-        gameOver();
-        break;
-      }
+};
+//checa se os botoes clicados são os mesmos da ordem gerada no jogo
+let checkOrder = () => {
+  for (let i in clickedOrder) {
+    if (clickedOrder[i] != order[i]) {
+      gameOver();
+      break;
     }
-    if (clickedOrder.length == order.length) {
-      alert(`Pontuação: ${score}\nVocê acertou! Iniciando próximo nível!`);
-      nextLevel();
-    }
-  };
+  }
+  if (clickedOrder.length == order.length) {
+    alert(`Pontuação: ${score}\nVocê acertou! Iniciando próximo nível!`);
+    nextLevel();
+  }
+};
 
-  //funcao para o clique do usuario
-  let click = (color) => {
-    clickedOrder[clickedOrder.length] = color;
-    createColorElement(color).classList.add("selected");
+//funcao para o clique do usuario
+let click = (color) => {
+  clickedOrder[clickedOrder.length] = color;
+  createColorElement(color).classList.add("selected");
 
-    setTimeout(() => {
-      createColorElement(color).classList.remove("selected");
-      checkOrder();
-    }, 250);
-  };
+  setTimeout(() => {
+    createColorElement(color).classList.remove("selected");
+    checkOrder();
+  }, 250);
+};
 
-  //funcao que retorna a cor
-  let createColorElement = (color) => {
-    if (color == 0) {
-      return green;
-    } else if (color == 1) {
-      return red;
-    } else if (color == 2) {
-      return yellow;
-    } else if (color == 3) {
-      return blue;
-    }
-  };
+//funcao que retorna a cor
+let createColorElement = (color) => {
+  if (color == 0) {
+    return green;
+  } else if (color == 1) {
+    return red;
+  } else if (color == 2) {
+    return yellow;
+  } else if (color == 3) {
+    return blue;
+  }
+};
 
-  //funcao para proximo nivel do jogo
-  let nextLevel = () => {
-    score++;
-    shuffleOrder();
-  };
+//funcao para proximo nivel do jogo
+let nextLevel = () => {
+  score++;
+  shuffleOrder();
+};
 
-  //funcao para game over
-  let gameOver = () => {
-    alert(
-      `Pontuação: ${score}!\nVocê perdeu o jogo!\nClique em OK para iniciar um novo jogo`
-    );
-    order = [];
-    clickedOrder = [];
+//funcao para game over
+let gameOver = () => {
+  alert(
+    `Pontuação: ${score}!\nVocê perdeu o jogo!\nClique em OK para iniciar um novo jogo`
+  );
+  order = [];
+  clickedOrder = [];
 
-    playGame();
-  };
-  //funcao inciar o jogo
-  let playGame = () => {
+  playGame();
+};
+//funcao inciar o jogo
+let playGame = () => {
   alert("Bem Vindo ao Gênesis!, Iniciando novo jogo!");
   score = 0;
 
